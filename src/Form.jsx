@@ -10,8 +10,9 @@ const useInputValue = initialValue => {
   };
 };
 
-export default ({ onSubmit }) => {
+export default React.memo(({ onSubmit }) => {
   const { resetValue, ...text } = useInputValue("");
+  console.log(`rendering <Form>`)
 
   return (
     <form
@@ -24,4 +25,4 @@ export default ({ onSubmit }) => {
       <input {...text} />
     </form>
   );
-};
+});
